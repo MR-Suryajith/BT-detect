@@ -1,101 +1,2419 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>PNEUMO</title>    
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.16.0/dist/tf.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/styles.css">
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.min.css">
-    <link rel="shortcut icon" href="Icons8-Ios7-Healthcare-Lungs.ico">
-</head>
+  <!-- Site made with Mobirise AI Website Builder v0.01, https://ai.mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise AI v0.01, ai.mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/Untitled_design-removebg-preview.png" type="image/x-icon">
+  <meta name="description" content="Cutting-edge technology for accurate brain tumor prediction. Get instant results and take control of your health.">
 
-<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
-    <nav class="navbar navbar-expand-md fixed-top navbar-light" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#">PNEUMO</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item nav-link"><a class="nav-link active" data-bss-hover-animate="pulse" href="#about">About</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" data-bss-hover-animate="pulse" href="#upload" style="border-radius: 0;">Upload</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" data-bss-hover-animate="pulse" href="#contact">contact</a></li>
-                </ul>
-            </div>
+  <title>Advanced Tumor Prediction</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+  <link rel="stylesheet" href="assets/parallax/jarallax.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/additional.css"><link rel="stylesheet" href="assets/mobirise/css/additional.css" type="text/css">
+  
+  
+
+  <style>:root{ --background: #FDEDEE; --dominant-color: #E84855; --primary-color: #EFBCD5; --secondary-color: #5F85DD; --success-color: #8EEABF; --danger-color: #EB8D96; --warning-color: #FFDE79; --info-color: #80E4F8; --background-text: #000000; --dominant-text: #FFFFFF; --primary-text: #000000; --secondary-text: #FFFFFF; --success-text: #000000; --danger-text: #000000; --warning-text: #000000; --info-text: #000000;}</style>
+</head>
+<body>
+
+
+    <style>
+.cid-u52CbXC4Qs  {
+  z-index: 1000;
+  width: 100%;
+  position: relative;
+}
+.cid-u52CbXC4Qs  .dropdown-item:before {
+  font-family: Moririse2 !important;
+  content: "\e966";
+  display: inline-block;
+  width: 0;
+  position: absolute;
+  left: 1rem;
+  top: 0.5rem;
+  margin-right: 0.5rem;
+  line-height: 1;
+  font-size: inherit;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+  transform: scale(0, 1);
+  transition: all 0.25s ease-in-out;
+}
+@media (max-width: 767px) {
+  .cid-u52CbXC4Qs  .navbar-toggler {
+    transform: scale(0.8);
+  }
+}
+.cid-u52CbXC4Qs  .navbar-brand {
+  flex-shrink: 0;
+  align-items: center;
+  margin-right: 0;
+  padding: 10px 0;
+  transition: all 0.3s;
+  word-break: break-word;
+  z-index: 1;
+}
+.cid-u52CbXC4Qs  .navbar-brand img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.cid-u52CbXC4Qs  .navbar-brand .navbar-caption {
+  line-height: inherit !important;
+}
+.cid-u52CbXC4Qs  .navbar-brand .navbar-logo a {
+  outline: none;
+}
+.cid-u52CbXC4Qs  .navbar-nav {
+  margin: auto;
+  margin-left: 0;
+  margin-left: auto;
+}
+.cid-u52CbXC4Qs  .navbar-nav .nav-item {
+  padding: 0 !important;
+  transition: 0.3s all !important;
+}
+.cid-u52CbXC4Qs  .navbar-nav .nav-item .nav-link {
+  padding: 16px !important;
+  margin: 0 !important;
+  border-radius: 1rem !important;
+  transition: 0.3s all !important;
+}
+.cid-u52CbXC4Qs  .navbar-nav .nav-item .nav-link:hover {
+  background-color: rgba(27, 31, 10, 0.06);
+}
+.cid-u52CbXC4Qs  .navbar-nav .open .nav-link::after {
+  transform: rotate(180deg);
+}
+@media (min-width: 992px) {
+  .cid-u52CbXC4Qs  .navbar-nav .open .nav-link::before {
+    content: "";
+    width: 100%;
+    height: 20px;
+    top: 100%;
+    background: transparent;
+    position: absolute;
+  }
+}
+.cid-u52CbXC4Qs  .navbar-nav .dropdown-item {
+  padding: 12px !important;
+  border-radius: 0.5rem !important;
+  margin: 0 8px !important;
+  transition: 0.3s all !important;
+}
+.cid-u52CbXC4Qs  .navbar-nav .dropdown-item:hover {
+  background-color: rgba(27, 31, 10, 0.06);
+}
+@media (min-width: 992px) {
+  .cid-u52CbXC4Qs  .navbar-nav {
+    padding-left: 1.5rem;
+  }
+}
+.cid-u52CbXC4Qs  .nav-link {
+  width: fit-content;
+  position: relative;
+}
+.cid-u52CbXC4Qs  .navbar-logo {
+  margin: 0 !important;
+}
+@media (max-width: 767px) {
+  .cid-u52CbXC4Qs  .navbar-logo {
+    padding-left: 0;
+  }
+}
+.cid-u52CbXC4Qs  .navbar-caption {
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+}
+@media (max-width: 767px) {
+  .cid-u52CbXC4Qs  .nav-dropdown {
+    padding-bottom: 0.5rem;
+  }
+}
+.cid-u52CbXC4Qs  .nav-dropdown .link.dropdown-toggle::after {
+  margin-left: 0.5rem;
+  margin-top: 0.2rem;
+  transition: 0.3s all;
+}
+.cid-u52CbXC4Qs  .container {
+  display: flex;
+  height: 90px;
+  padding: 0.5rem 0.6rem;
+  flex-wrap: nowrap;
+  background: rgba(255, 255, 255, 0.8) !important;
+  left: 0;
+  right: 0;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 100vw;
+  margin-top: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 30px 60px 0 rgba(27, 31, 10, 0.08);
+}
+@media (max-width: 992px) {
+  .cid-u52CbXC4Qs  .container {
+    padding-right: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .cid-u52CbXC4Qs  .container {
+    width: 95%;
+    height: 56px !important;
+    padding-right: 1rem;
+    margin-top: 0rem;
+  }
+}
+.cid-u52CbXC4Qs  .iconfont-wrapper {
+  color: #000000 !important;
+  font-size: 1.5rem;
+  padding-right: 0.5rem;
+}
+.cid-u52CbXC4Qs  .dropdown-menu {
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 100%;
+  padding: 12px 4px !important;
+  border-radius: 1.5rem;
+  transition: 0.3s all !important;
+  min-width: auto;
+  background: #ffffff;
+  background: rgba(255, 255, 255, 0.8) !important;
+}
+.cid-u52CbXC4Qs  .nav-item:focus,
+.cid-u52CbXC4Qs  .nav-link:focus {
+  outline: none;
+}
+.cid-u52CbXC4Qs  .dropdown .dropdown-menu .dropdown-item {
+  width: auto;
+  transition: all 0.25s ease-in-out;
+}
+.cid-u52CbXC4Qs  .dropdown .dropdown-menu .dropdown-item::after {
+  right: 0.5rem;
+}
+.cid-u52CbXC4Qs  .dropdown .dropdown-menu .dropdown-item .mbr-iconfont {
+  margin-right: 0.5rem;
+  vertical-align: sub;
+}
+.cid-u52CbXC4Qs  .dropdown .dropdown-menu .dropdown-item .mbr-iconfont:before {
+  display: inline-block;
+  transform: scale(1, 1);
+  transition: all 0.25s ease-in-out;
+}
+.cid-u52CbXC4Qs  .collapsed .dropdown-menu .dropdown-item:before {
+  display: none;
+}
+.cid-u52CbXC4Qs  .collapsed .dropdown .dropdown-menu .dropdown-item {
+  padding: 0.235em 1.5em 0.235em 1.5em !important;
+  transition: none;
+  margin: 0 !important;
+}
+.cid-u52CbXC4Qs  .navbar {
+  min-height: 90px;
+  transition: all 0.3s;
+  border-bottom: 1px solid transparent;
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+.cid-u52CbXC4Qs  .navbar.opened {
+  transition: all 0.3s;
+}
+.cid-u52CbXC4Qs  .navbar .dropdown-item {
+  padding: 0.5rem 1.8rem;
+}
+.cid-u52CbXC4Qs  .navbar .navbar-logo img {
+  min-width: 6rem;
+  object-fit: cover;
+}
+.cid-u52CbXC4Qs  .navbar .navbar-collapse {
+  z-index: 1;
+  justify-content: flex-end;
+}
+.cid-u52CbXC4Qs  .navbar.collapsed {
+  justify-content: center;
+}
+.cid-u52CbXC4Qs  .navbar.collapsed .nav-item .nav-link::before {
+  display: none;
+}
+.cid-u52CbXC4Qs  .navbar.collapsed.opened .dropdown-menu {
+  top: 0;
+}
+@media (min-width: 992px) {
+  .cid-u52CbXC4Qs  .navbar.collapsed.opened:not(.navbar-short) .navbar-collapse {
+    max-height: calc(98.5vh - 3rem);
+  }
+}
+.cid-u52CbXC4Qs  .navbar.collapsed .dropdown-menu .dropdown-submenu {
+  left: 0 !important;
+}
+.cid-u52CbXC4Qs  .navbar.collapsed .dropdown-menu .dropdown-item:after {
+  right: auto;
+}
+.cid-u52CbXC4Qs  .navbar.collapsed .dropdown-menu .dropdown-toggle[data-toggle="dropdown-submenu"]:after {
+  margin-left: 0.5rem;
+  margin-top: 0.2rem;
+  border-top: 0.35em solid;
+  border-right: 0.35em solid transparent;
+  border-left: 0.35em solid transparent;
+  border-bottom: 0;
+  top: 41%;
+}
+.cid-u52CbXC4Qs  .navbar.collapsed ul.navbar-nav li {
+  margin: auto;
+}
+.cid-u52CbXC4Qs  .navbar.collapsed .dropdown-menu .dropdown-item {
+  padding: 0.25rem 1.5rem;
+  text-align: center;
+}
+.cid-u52CbXC4Qs  .navbar.collapsed .icons-menu {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+@media (max-width: 767px) {
+  .cid-u52CbXC4Qs  .navbar {
+    min-height: 72px;
+  }
+  .cid-u52CbXC4Qs  .navbar .navbar-logo img {
+    height: 2.5rem !important;
+    min-width: 2.5rem !important;
+  }
+}
+@media (max-width: 991px) {
+  .cid-u52CbXC4Qs  .navbar .nav-item .nav-link::before {
+    display: none;
+  }
+  .cid-u52CbXC4Qs  .navbar.opened .dropdown-menu {
+    top: 0;
+  }
+  .cid-u52CbXC4Qs  .navbar .dropdown-menu .dropdown-submenu {
+    left: 0 !important;
+  }
+  .cid-u52CbXC4Qs  .navbar .dropdown-menu .dropdown-item:after {
+    right: auto;
+  }
+  .cid-u52CbXC4Qs  .navbar .dropdown-menu .dropdown-toggle[data-toggle="dropdown-submenu"]:after {
+    margin-left: 0.5rem;
+    margin-top: 0.2rem;
+    border-top: 0.35em solid;
+    border-right: 0.35em solid transparent;
+    border-left: 0.35em solid transparent;
+    border-bottom: 0;
+    top: 40%;
+  }
+  .cid-u52CbXC4Qs  .navbar .dropdown-menu .dropdown-item {
+    padding: 0.25rem 1.5rem !important;
+    text-align: center;
+  }
+  .cid-u52CbXC4Qs  .navbar .navbar-brand {
+    flex-shrink: initial;
+    flex-basis: auto;
+    word-break: break-word;
+    padding-right: 10px;
+  }
+  .cid-u52CbXC4Qs  .navbar .navbar-toggler {
+    flex-basis: auto;
+  }
+  .cid-u52CbXC4Qs  .navbar .icons-menu {
+    padding-left: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+.cid-u52CbXC4Qs  .navbar.navbar-short .navbar-logo img {
+  height: 2rem;
+}
+.cid-u52CbXC4Qs  .dropdown-item.active,
+.cid-u52CbXC4Qs  .dropdown-item:active {
+  background-color: transparent;
+}
+.cid-u52CbXC4Qs  .navbar-expand-lg .navbar-nav .nav-link {
+  padding: 0;
+}
+.cid-u52CbXC4Qs  .nav-dropdown .link.dropdown-toggle {
+  margin-right: 1.667em;
+}
+.cid-u52CbXC4Qs  .nav-dropdown .link.dropdown-toggle[aria-expanded="true"] {
+  margin-right: 0;
+  padding: 0.667em 1.667em;
+}
+.cid-u52CbXC4Qs  .navbar.navbar-expand-lg .dropdown .dropdown-menu {
+  background: #ffffff;
+}
+.cid-u52CbXC4Qs  .navbar.navbar-expand-lg .dropdown .dropdown-menu .dropdown-submenu {
+  margin: 0;
+  left: 105%;
+  transform: none;
+  top: -12px;
+}
+.cid-u52CbXC4Qs  .navbar .dropdown.open > .dropdown-menu {
+  display: flex;
+}
+.cid-u52CbXC4Qs  ul.navbar-nav {
+  flex-wrap: wrap;
+}
+.cid-u52CbXC4Qs  .navbar-buttons {
+  text-align: center;
+  min-width: 140px;
+}
+@media (max-width: 992px) {
+  .cid-u52CbXC4Qs  .navbar-buttons {
+    text-align: left;
+  }
+}
+.cid-u52CbXC4Qs  button.navbar-toggler {
+  outline: none;
+  width: 31px;
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  align-self: center;
+}
+.cid-u52CbXC4Qs  button.navbar-toggler .hamburger span {
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 2px;
+  border-right: 5px;
+  background-color: #000000;
+}
+.cid-u52CbXC4Qs  button.navbar-toggler .hamburger span:nth-child(1) {
+  top: 0;
+  transition: all 0.2s;
+}
+.cid-u52CbXC4Qs  button.navbar-toggler .hamburger span:nth-child(2) {
+  top: 8px;
+  transition: all 0.15s;
+}
+.cid-u52CbXC4Qs  button.navbar-toggler .hamburger span:nth-child(3) {
+  top: 8px;
+  transition: all 0.15s;
+}
+.cid-u52CbXC4Qs  button.navbar-toggler .hamburger span:nth-child(4) {
+  top: 16px;
+  transition: all 0.2s;
+}
+.cid-u52CbXC4Qs  nav.opened .hamburger span:nth-child(1) {
+  top: 8px;
+  width: 0;
+  opacity: 0;
+  right: 50%;
+  transition: all 0.2s;
+}
+.cid-u52CbXC4Qs  nav.opened .hamburger span:nth-child(2) {
+  transform: rotate(45deg);
+  transition: all 0.25s;
+}
+.cid-u52CbXC4Qs  nav.opened .hamburger span:nth-child(3) {
+  transform: rotate(-45deg);
+  transition: all 0.25s;
+}
+.cid-u52CbXC4Qs  nav.opened .hamburger span:nth-child(4) {
+  top: 8px;
+  width: 0;
+  opacity: 0;
+  right: 50%;
+  transition: all 0.2s;
+}
+.cid-u52CbXC4Qs  .navbar-dropdown {
+  padding: 0 1rem;
+}
+.cid-u52CbXC4Qs  a.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cid-u52CbXC4Qs  .icons-menu {
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.3rem;
+  text-align: center;
+}
+@media (max-width: 992px) {
+  .cid-u52CbXC4Qs  .icons-menu {
+    justify-content: flex-start;
+    margin-bottom: 0.5rem;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .cid-u52CbXC4Qs  .navbar {
+    height: 70px;
+  }
+  .cid-u52CbXC4Qs  .navbar.opened {
+    height: auto;
+  }
+  .cid-u52CbXC4Qs  .nav-item .nav-link:hover::before {
+    width: 175%;
+    max-width: calc(100% + 2rem);
+    left: -1rem;
+  }
+}
+.cid-u52CbXC4Qs  .navbar .dropdown > .dropdown-menu {
+  display: none;
+  width: max-content;
+  max-width: 500px !important;
+  transform: translateX(-50%);
+  top: calc(100% + 20px);
+  left: 50%;
+}
+.cid-u52CbXC4Qs  .navbar .dropdown > .dropdown-menu .dropdown-item {
+  line-height: 1 !important;
+}
+.cid-u52CbXC4Qs  .navbar .dropdown > .dropdown-menu .dropdown .dropdown-item {
+  align-items: center;
+  display: flex;
+  height: max-content !important;
+  min-height: max-content !important;
+}
+.cid-u52CbXC4Qs  .navbar .dropdown > .dropdown-menu .dropdown .dropdown-item::after {
+  display: inline-block;
+  position: static;
+  margin-left: 0.5rem;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  transition: 0.3s all;
+  transform: rotate(-90deg);
+}
+.cid-u52CbXC4Qs  .navbar .dropdown > .dropdown-menu .dropdown.open .dropdown-item::after {
+  transform: rotate(0deg);
+}
+.cid-u52CbXC4Qs  .mbr-section-btn {
+  margin: -0.6rem -0.6rem;
+}
+.cid-u52CbXC4Qs  .navbar-toggler {
+  margin-left: 12px;
+  margin-right: 8px;
+  order: 1000;
+}
+@media (max-width: 991px) {
+  .cid-u52CbXC4Qs  .navbar-brand {
+    margin-right: auto;
+  }
+  .cid-u52CbXC4Qs  .navbar-collapse {
+    z-index: -1 !important;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    background: #ffffff;
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(8px);
+  }
+  .cid-u52CbXC4Qs  .navbar-nav .nav-item .nav-link::after {
+    margin-left: 10px;
+  }
+  .cid-u52CbXC4Qs  .navbar-nav .dropdown-item:hover {
+    background-color: rgba(27, 31, 10, 0.06);
+  }
+  .cid-u52CbXC4Qs  .navbar .dropdown > .dropdown-menu {
+    max-width: 100% !important;
+    transform: translateX(0);
+    top: 10px;
+    left: 0;
+    padding: 8px !important;
+    border-radius: 1rem;
+    background-color: rgba(27, 31, 10, 0.04) !important;
+  }
+  .cid-u52CbXC4Qs  .navbar .dropdown > .dropdown-menu .dropdown-item {
+    padding: 8px !important;
+    line-height: 1 !important;
+    margin-bottom: 4px !important;
+  }
+  .cid-u52CbXC4Qs  .navbar .dropdown > .dropdown-menu .dropdown .dropdown-item {
+    align-items: center;
+    display: flex;
+    height: max-content !important;
+    min-height: max-content !important;
+  }
+  .cid-u52CbXC4Qs  .navbar .dropdown > .dropdown-menu .dropdown .dropdown-item::after {
+    display: inline-block;
+    position: static;
+    margin-left: 0.5rem;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    transition: 0.3s all;
+    transform: rotate(0deg);
+  }
+  .cid-u52CbXC4Qs  .navbar .dropdown > .dropdown-menu .dropdown.open .dropdown-item::after {
+    transform: rotate(180deg);
+  }
+  .cid-u52CbXC4Qs  .navbar .dropdown > .dropdown-menu .dropdown-submenu {
+    position: static;
+    width: 100%;
+    max-width: 100% !important;
+    transform: translateX(0) !important;
+    top: 0;
+    left: 0;
+    padding: 8px !important;
+    border-radius: 1rem;
+    background-color: rgba(27, 31, 10, 0.04) !important;
+  }
+  .cid-u52CbXC4Qs  .navbar .dropdown.open > .dropdown-menu {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 575px) {
+  .cid-u52CbXC4Qs  .navbar-collapse {
+    padding: 1rem;
+  }
+}
+</style>
+
+<section class="menu menu2 cid-u52CbXC4Qs" once="menu" id="menu-5-u52CbXC4Qs">
+  <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+    <div class="container">
+      <div class="navbar-brand">
+        <span class="navbar-logo">
+					
+						<img src="assets/images/photo-1572625259782-94ac200efcdb.jpeg" style="height: 4.3rem;">
+					</a>
+				</span>
+				<span class="navbar-caption-wrap">
+          <a class="navbar-caption text-black display-4" href="https://mobiri.se">Cerebro</a>
+        </span>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-bs-toggle="collapse" data-target="#navbarSupportedContent"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-    </nav>
-    <header class="masthead" id="masthead">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h1 class="brand-heading">PNEUMO</h1>
-                        <p class="intro-text">Unlock the Power of Respiratory Well-being with PNEUMO! Dive into a world of knowledge, prioritize your lung health, and join us on a captivating journey towards a pneumonia-free future. Together, let's breathe easier and live life to the fullest. Your path to vibrant health starts here!</p><a class="btn btn-link bounce animated btn-circle" role="button" href="#about"><i class="fa fa-angle-double-down animated"></i></a>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+          <li class="nav-item">
+            <a class="nav-link link text-black display-4" href="#">Predict</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link text-black display-4" href="#"
+              aria-expanded="false">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link text-black display-4" href="#">Discover</a>
+          </li>
+        </ul>
+        <div class="navbar-buttons mbr-section-btn">
+          <a class="btn btn-primary display-4" href="https://mobiri.se">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</section>
+
+    <style>
+  .cid-u52CbXCp9R {
+    display: flex;
+    background-image: url("assets/images/4306793.jpg");
+  }
+  .cid-u52CbXCp9R .mbr-overlay {
+    background-color: #000000;
+    opacity: 0.5;
+  }
+  @media (min-width: 768px) {
+    .cid-u52CbXCp9R {
+      align-items: flex-end;
+    }
+    .cid-u52CbXCp9R .row {
+      justify-content: center;
+    }
+    .cid-u52CbXCp9R .content-wrap {
+      padding: 1rem 3rem;
+    }
+  }
+  @media (max-width: 991px) and (min-width: 768px) {
+    .cid-u52CbXCp9R .content-wrap {
+      min-width: 50%;
+    }
+  }
+  @media (max-width: 767px) {
+    .cid-u52CbXCp9R {
+      -webkit-align-items: center;
+      align-items: flex-end;
+    }
+    .cid-u52CbXCp9R .mbr-row {
+      -webkit-justify-content: center;
+      justify-content: center;
+    }
+    .cid-u52CbXCp9R .content-wrap {
+      width: 100%;
+    }
+  }
+  .cid-u52CbXCp9R .mbr-section-title,
+  .cid-u52CbXCp9R .mbr-section-subtitle {
+    text-align: center;
+  }
+  .cid-u52CbXCp9R .mbr-text,
+  .cid-u52CbXCp9R .mbr-section-btn {
+    text-align: center;
+  }
+</style>
+<section class="header16 cid-u52CbXCp9R mbr-fullscreen mbr-parallax-background" id="hero-17-u52CbXCp9R">
+  <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0);"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="content-wrap col-12 col-md-10">
+        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
+          <strong>Cerebro:</strong>
+        </h1>
+        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7"> Predict Brain Tumours with Precision</p>
+       
+      </div>
+    </div>
+  </div>
+</section>
+    <style>
+.cid-u52CbXCSIQ {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: transparent;
+}
+.cid-u52CbXCSIQ .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-u52CbXCSIQ .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-u52CbXCSIQ .card-wrapper {
+  background: var(--primary-color, #393193);
+}
+@media (max-width: 767px) {
+  .cid-u52CbXCSIQ .card-wrapper {
+    padding: 1.5rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .cid-u52CbXCSIQ .card-wrapper {
+    padding: 2.25rem;
+  }
+}
+@media (min-width: 992px) {
+  .cid-u52CbXCSIQ .card-wrapper {
+    padding: 4rem;
+  }
+}
+.cid-u52CbXCSIQ .mbr-text,
+.cid-u52CbXCSIQ .mbr-section-btn {
+  color: var(--primary-text, #ffd7ef);
+}
+.cid-u52CbXCSIQ .card-title,
+.cid-u52CbXCSIQ .card-box {
+  text-align: center;
+  color: var(--primary-text, #ffd7ef);
+}
+</style>
+
+    <style>
+.cid-u52CbXCS8L {
+  overflow: hidden;
+  background-image: url("assets/images/img.png");
+}
+</style>
+<section class="image02 cid-u52CbXCS8L mbr-fullscreen mbr-parallax-background" id="image-13-u52CbXCS8L">
+    <div class="container">
+        <div class="row"></div>
+    </div>
+</section>
+    <style>
+.cid-u52CbXDvPL .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-u52CbXDvPL .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: #000000;
+}
+</style>
+<section class="header18 cid-u52CbXDvPL mbr-fullscreen" data-bg-video="https://www.youtube.com/embed/NSDpnG4dXFY?autoplay&#x3D;1&amp;loop&#x3D;1&amp;playlist&#x3D;NSDpnG4dXFY&amp;t&#x3D;20&amp;mute&#x3D;1&amp;playsinline&#x3D;1&amp;controls&#x3D;0&amp;showinfo&#x3D;0&amp;autohide&#x3D;1&amp;allowfullscreen&#x3D;true&amp;mode&#x3D;transparent" id="video-5-u52CbXDvPL">
+  <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0);"></div>
+  <div class="container-fluid">
+    <div class="row">
+    </div>
+  </div>
+</section>
+    <style>
+  .cid-u52CbXDoDD {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: transparent;
+  }
+  .cid-u52CbXDoDD img,
+  .cid-u52CbXDoDD .item-img {
+    width: 100%;
+    height: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  @media (max-width: 767px) {
+    .cid-u52CbXDoDD img,
+    .cid-u52CbXDoDD .item-img {
+      max-height: 300px;
+    }
+  }
+  .cid-u52CbXDoDD .item:focus,
+  .cid-u52CbXDoDD span:focus {
+    outline: none;
+  }
+  .cid-u52CbXDoDD .item-wrapper {
+    position: relative;
+  }
+  .cid-u52CbXDoDD .slide-content {
+    position: relative;
+    border-radius: 4px;
+    background: #ffffff;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-flow: column nowrap;
+  }
+  @media (min-width: 768px) {
+    .cid-u52CbXDoDD .slide-content .item-content {
+      padding: 2.25rem 2.25rem 0;
+    }
+    .cid-u52CbXDoDD .slide-content .item-footer {
+      padding: 0 2.25rem 2.25rem;
+    }
+  }
+  @media (max-width: 767px) {
+    .cid-u52CbXDoDD .slide-content .item-content {
+      padding: 1.5rem 1.5rem 0;
+    }
+    .cid-u52CbXDoDD .slide-content .item-footer {
+      padding: 0 1.5rem 1.5rem;
+    }
+  }
+  .cid-u52CbXDoDD .mbr-section-btn {
+    margin-top: auto !important;
+  }
+  .cid-u52CbXDoDD .mbr-section-title {
+    color: #000000;
+  }
+  .cid-u52CbXDoDD .mbr-text,
+  .cid-u52CbXDoDD .mbr-section-btn {
+    text-align: left;
+  }
+  .cid-u52CbXDoDD .item-title {
+    text-align: left;
+  }
+  .cid-u52CbXDoDD .item-subtitle {
+    text-align: left;
+    color: #000000;
+  }
+  .cid-u52CbXDoDD .embla__slide {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-width: 370px;
+    max-width: 370px;
+  }
+  @media (max-width: 768px) {
+    .cid-u52CbXDoDD .embla__slide {
+      min-width: 85%;
+      max-width: initial;
+    }
+  }
+  .cid-u52CbXDoDD .embla__button--next,
+  .cid-u52CbXDoDD .embla__button--prev {
+    display: flex;
+  }
+  .cid-u52CbXDoDD .embla__button {
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: -1.5rem;
+    font-size: 22px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transition: all 0.3s;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .cid-u52CbXDoDD .embla__button {
+      display: none;
+    }
+  }
+  .cid-u52CbXDoDD .embla__button:disabled {
+    cursor: default;
+    display: none;
+  }
+  .cid-u52CbXDoDD .embla__button:hover {
+    background: #000;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .cid-u52CbXDoDD .embla__button.embla__button--prev {
+    left: 0;
+    margin-left: 2.5rem;
+  }
+  .cid-u52CbXDoDD .embla__button.embla__button--next {
+    right: 0;
+    margin-right: 2.5rem;
+  }
+  @media (max-width: 767px) {
+    .cid-u52CbXDoDD .embla__button {
+      top: auto;
+    }
+  }
+  .cid-u52CbXDoDD .embla {
+    position: relative;
+    width: 100%;
+  }
+  .cid-u52CbXDoDD .embla__viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+  .cid-u52CbXDoDD .embla__viewport.is-draggable {
+    cursor: grab;
+  }
+  .cid-u52CbXDoDD .embla__viewport.is-dragging {
+    cursor: grabbing;
+  }
+  .cid-u52CbXDoDD .embla__container {
+    display: flex;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (max-width: 768px) {
+    .cid-u52CbXDoDD .embla__container .embla__slide:first-child {
+      margin-left: 2rem !important;
+    }
+    .cid-u52CbXDoDD .embla__container .embla__slide:last-child {
+      margin-right: 2rem !important;
+    }
+  }
+  .cid-u52CbXDoDD .content-head {
+    max-width: 800px;
+  }
+</style><br>
+<section class="text-center upload-section content-section" id="upload"> 
+  <div class="container">
+      <div class="col-lg-8 mx-auto">
+          <h4>Confront brain tumors fearlessly-</h4>
+          <p>
+             Early detection of brain tumors is crucial for timely intervention and
+             improved patient outcomes.Cerebro’s accurate detection and segmentation
+             capabilities can assist medical professionals in diagnosing
+             brain tumors more effectively.
+          </p>
+          <form id="uploadForm" method="POST" enctype="multipart/form-data">
+              <input class="btn btn-primary btn-lg btn-default"
+               id="file"
+               type="file"
+               name="file" 
+               accept=".jpg, .jpeg, .png" 
+               required
+              />
+              <button
+               class="btn btn-primary btn-lg btn-default"
+               id="predictButton" 
+               type="button">PREDICT
+              </button>
+          </form>
+          
+          <div id="predictionResult">
+              <h2 id="predictionText" style="color: rgb(66, 210, 220);"></h2>
+              <span id="predictionProbability"></span>
+              <!-- Display the uploaded image -->
+              <img
+               id="uploadedImage"
+               alt="Uploaded Image"
+               style="display: none; max-width: 100%;"
+              />
+          </div>
+      </div>
+  </div>
+</section>
+<section class="features_17 mbr-embla cid-u52CbXDoDD" id="features-17-u52CbXDoDD">
+	<div class="position-relative">
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<div class="col-12 content-head">
+					<div class="mbr-section-head mb-5">
+						<h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+							<strong>Tumour Tales</strong>
+						</h4>
+						<h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7">Unveiling the Mysteries of Brain Tumours</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="embla" data-skip-snaps="true" data-align="center" data-contain-scroll="trimSnaps" data-auto-play-interval="5" data-draggable="true">
+			<div class="embla__viewport container-fluid">
+				<div class="embla__container">
+					<div class="embla__slide slider-image item active" style="margin-left: 1rem; margin-right: 1rem;">
+						<div class="slide-content">
+							<div class="item-img">
+								<div class="item-wrapper">
+									<img src="assets/images/photo-1587309492556-5960dcda7e17.jpeg" data-slide-to="1" data-bs-slide-to="1">
+								</div>
+							</div>
+							<div class="item-content">
+								<h5 class="item-title mbr-fonts-style display-5">
+									<strong>Types</strong>
+								</h5>
+								<p class="mbr-text mbr-fonts-style mt-3 display-7">Discover the Diverse World of Brain Tumours</p>
+							</div>
+							<div class="mbr-section-btn item-footer mt-2"><a href="" class="btn item-btn btn-primary display-7" target="_blank">Explore More</a></div>
+						</div>
+					</div>
+					<div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
+						<div class="slide-content">
+							<div class="item-img">
+								<div class="item-wrapper">
+									<img src="assets/images/photo-1516670428252-df97bba108d1.jpeg" data-slide-to="2" data-bs-slide-to="2">
+								</div>
+							</div>
+							<div class="item-content">
+								<h5 class="item-title mbr-fonts-style display-5">
+									<strong>Symptoms</strong>
+								</h5>
+								<p class="mbr-text mbr-fonts-style mt-3 display-7">Decoding the Signals Your Brain Sends</p>
+							</div>
+							<div class="mbr-section-btn item-footer mt-2">
+								<a href="" class="btn item-btn btn-primary display-7" target="_blank">Explore More</a>
+							</div>
+						</div>
+					</div>
+					<div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
+						<div class="slide-content">
+							<div class="item-img">
+								<div class="item-wrapper">
+									<img src="assets/images/photo-1559757148-5c350d0d3c56.jpeg" data-slide-to="3" data-bs-slide-to="3">
+								</div>
+							</div>
+							<div class="item-content">
+								<h5 class="item-title mbr-fonts-style display-5">
+									<strong>Risk Factors</strong>
+								</h5>
+								<p class="mbr-text mbr-fonts-style mt-3 display-7">Navigating the Hazardous Terrain of Tumours</p>
+							</div>
+							<div class="mbr-section-btn item-footer mt-2">
+								<a href="" class="btn item-btn btn-primary display-7" target="_blank">Explore More</a>
+							</div>
+						</div>
+					</div>
+					<div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
+						<div class="slide-content">
+							<div class="item-img">
+								<div class="item-wrapper">
+									<img src="assets/images/photo-1557672186-269926e526c1.jpeg" data-slide-to="4" data-bs-slide-to="4">
+								</div>
+							</div>
+							<div class="item-content">
+								<h5 class="item-title mbr-fonts-style display-5">
+									<strong>Prevention</strong>
+								</h5>
+								<p class="mbr-text mbr-fonts-style mt-3 display-7">Shielding Your Mind from Unwanted Invaders</p>
+							</div>
+							<div class="mbr-section-btn item-footer mt-2">
+								<a href="" class="btn item-btn btn-primary display-7" target="_blank">Explore More</a>
+							</div>
+						</div>
+					</div>
+					<div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
+						<div class="slide-content">
+							<div class="item-img">
+								<div class="item-wrapper">
+									<img src="assets/images/photo-1529854140025-25995121f16f.jpeg" data-slide-to="5" data-bs-slide-to="5">
+								</div>
+							</div>
+							<div class="item-content">
+								<h5 class="item-title mbr-fonts-style display-5">
+									<strong>Treatment</strong>
+								</h5>
+								<p class="mbr-text mbr-fonts-style mt-3 display-7">Conquering the Battle Against Brain Tumours</p>
+							</div>
+							<div class="mbr-section-btn item-footer mt-2">
+								<a href="" class="btn item-btn btn-primary display-7" target="_blank">Explore More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="embla__button embla__button--prev">
+				<span class="mobi-mbri mobi-mbri-arrow-prev mbr-iconfont" aria-hidden="true"></span>
+				<span class="sr-only visually-hidden visually-hidden visually-hidden">Previous</span>
+			</button>
+			<button class="embla__button embla__button--next">
+				<span class="mobi-mbri mobi-mbri-arrow-next mbr-iconfont" aria-hidden="true"></span>
+				<span class="sr-only visually-hidden visually-hidden visually-hidden">Next</span>
+			</button>
+		</div>
+	</div>
+</section>
+    <style>
+.cid-u52CbXD3vf {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #ffffff;
+}
+.cid-u52CbXD3vf .item:focus,
+.cid-u52CbXD3vf span:focus {
+  outline: none;
+}
+.cid-u52CbXD3vf .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
+}
+.cid-u52CbXD3vf .content-head {
+  max-width: 800px;
+}
+.cid-u52CbXD3vf .item {
+  color: #232323;
+  min-height: 90px;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .cid-u52CbXD3vf .item {
+    min-height: 45px;
+  }
+}
+</style>
+<section class="gallery10 cid-u52CbXD3vf" id="features-61-u52CbXD3vf">
+  <div class="container-fluid">
+      <div class="loop-container">
+        <div class="item display-1" data-linewords="
+          Mind-Bending Facts *
+          Neuro Nourishment *
+          Cerebral Chronicles *
+          Tumour Triumphs *
+          Brainstorm Bonanza *
+          Cognitive Chronicles *" 
+        data-direction="-1" data-speed="0.05">
+        </div>
+        <div class="item display-1" data-linewords="
+          Mind-Bending Facts *
+          Neuro Nourishment *
+          Cerebral Chronicles *
+          Tumour Triumphs *
+          Brainstorm Bonanza *
+          Cognitive Chronicles *" 
+        data-direction="-1" data-speed="0.05">
+        </div>
+      </div>   
+  </div>
+</section>
+    <style>
+  .cid-u52CbXEv10 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: transparent;
+  }
+  .cid-u52CbXEv10 .mbr-iconfont {
+    font-size: 1.2rem !important;
+    font-family: 'Moririse2' !important;
+    color: white;
+    transition: all 0.3s;
+    transform: rotate(180deg);
+  }
+  .cid-u52CbXEv10 .panel-group {
+    border: none;
+  }
+  .cid-u52CbXEv10 .card-header {
+    padding: 1.2rem 0.5rem;
+  }
+  @media (max-width: 767px) {
+    .cid-u52CbXEv10 .card-header {
+      padding: 1rem 0rem;
+    }
+  }
+  .cid-u52CbXEv10 .panel-body {
+    padding: 0 0.5rem;
+    padding-bottom: 1rem;
+  }
+  @media (max-width: 767px) {
+    .cid-u52CbXEv10 .panel-body {
+      padding: 0rem;
+      padding-bottom: 1rem;
+    }
+  }
+  .cid-u52CbXEv10 .img-col {
+    padding: 0;
+  }
+  .cid-u52CbXEv10 .img-item {
+    height: 100%;
+  }
+  .cid-u52CbXEv10 img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .cid-u52CbXEv10 .collapsed span {
+    transform: rotate(0deg);
+  }
+  .cid-u52CbXEv10 .panel-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cid-u52CbXEv10 p {
+    margin-bottom: 0.3rem;
+  }
+  .cid-u52CbXEv10 .card .card-header {
+    background-color: transparent;
+    margin-bottom: 0;
+    border: 0;
+    border-radius: 2rem;
+  }
+  .cid-u52CbXEv10 .card {
+    background: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+  }
+  @media (max-width: 767px) {
+    .cid-u52CbXEv10 .card {
+      padding: 1.5rem;
+    }
+  }
+  .cid-u52CbXEv10 .panel-text {
+    color: #000000;
+  }
+  .cid-u52CbXEv10 .mbr-section-title {
+    text-align: center;
+    color: #000000;
+  }
+  .cid-u52CbXEv10 .mbr-section-subtitle {
+    color: #000000;
+    text-align: center;
+  }
+  .cid-u52CbXEv10 .panel-title-edit,
+  .cid-u52CbXEv10 .mbr-iconfont {
+    color: #000000;
+  }
+</style>
+<section class="list1 cid-u52CbXEv10" id="faq-1-u52CbXEv10">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-12 col-lg-10 m-auto">
+				<div class="content">
+					<div class="mbr-section-head align-left mb-5">
+						<h3 class="mbr-section-title mb-2 mbr-fonts-style display-2">
+							<strong>Curious Minds Want to Know</strong>
+						</h3>
+					</div>
+					<div id="bootstrap-accordion_0" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
+						<div class="card mb-3">
+							<div class="card-header" role="tab" id="headingOne">
+								<a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse1_0" aria-expanded="false" aria-controls="collapse1">
+									<h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
+										What are the common symptoms of brain tumours?
+									</h6>
+									<span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+								</a>
+							</div>
+							<div id="collapse1_0" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_0">
+								<div class="panel-body">
+									<p class="mbr-fonts-style panel-text display-7">
+										Headaches, seizures, memory problems, and vision changes are common symptoms.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="card mb-3">
+							<div class="card-header" role="tab" id="headingOne">
+								<a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse2_0" aria-expanded="false" aria-controls="collapse2">
+									<h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
+										How can I reduce my risk of developing a brain tumour?
+									</h6>
+									<span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+								</a>
+							</div>
+							<div id="collapse2_0" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_0">
+								<div class="panel-body">
+									<p class="mbr-fonts-style panel-text display-7">
+										Maintain a healthy lifestyle, avoid radiation exposure, and protect your head from injuries.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="card mb-3">
+							<div class="card-header" role="tab" id="headingOne">
+								<a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse3_0" aria-expanded="false" aria-controls="collapse3">
+									<h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
+										Are all brain tumours cancerous?
+									</h6>
+									<span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+								</a>
+							</div>
+							<div id="collapse3_0" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_0">
+								<div class="panel-body">
+									<p class="mbr-fonts-style panel-text display-7">
+										No, some brain tumours are non-cancerous and can be successfully treated.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="card mb-3">
+							<div class="card-header" role="tab" id="headingOne">
+								<a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse4_0" aria-expanded="false" aria-controls="collapse4">
+									<h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
+										What treatments are available for brain tumours?
+									</h6>
+									<span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+								</a>
+							</div>
+							<div id="collapse4_0" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_0">
+								<div class="panel-body">
+									<p class="mbr-fonts-style panel-text display-7">
+										Treatment options include surgery, radiation therapy, and chemotherapy.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="card mb-3">
+							<div class="card-header" role="tab" id="headingOne">
+								<a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse5_0" aria-expanded="false" aria-controls="collapse5">
+									<h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
+										Can brain tumours be prevented?
+									</h6>
+									<span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+								</a>
+							</div>
+							<div id="collapse5_0" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_0">
+								<div class="panel-body">
+									<p class="mbr-fonts-style panel-text display-7">
+										While not always preventable, early detection and healthy habits can reduce the risk.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+    <style>
+.cid-u52CbXEztt {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #ffffff;
+}
+.cid-u52CbXEztt .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-u52CbXEztt .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-u52CbXEztt .title .num {
+  width: 100%;
+  display: block;
+}
+.cid-u52CbXEztt .title .card-title {
+  z-index: 1;
+}
+.cid-u52CbXEztt .num {
+  color: var(--primary-color, #9fe870);
+  text-align: center;
+}
+.cid-u52CbXEztt .item-mb {
+  margin-bottom: 2rem;
+}
+@media (max-width: 767px) {
+  .cid-u52CbXEztt .item-mb {
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 767px) {
+  .cid-u52CbXEztt * {
+    text-align: center !important;
+  }
+  .cid-u52CbXEztt .content-column {
+    margin-bottom: 2rem;
+  }
+}
+.cid-u52CbXEztt .content-head {
+  max-width: 800px;
+}
+.cid-u52CbXEztt .card-text {
+  text-align: center;
+}
+.cid-u52CbXEztt .card-title,
+.cid-u52CbXEztt .card-img {
+   text-align: center;
+}
+</style>
+<section class="features023 cid-u52CbXEztt" id="metrics-1-u52CbXEztt">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="card-wrapper mb-5">
+                    <div class="card-box align-center">
                     </div>
                 </div>
             </div>
         </div>
-    </header>
-    <section class="text-center content-section" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>About PNEUMO</h2>
-                    <p>Welcome to <strong>PNEUMO</strong>, we're on a mission to demystify pneumonia, offering you a vibrant hub of information on its stages, symptoms, treatments, and preventative strategies. Empower yourself with insights, prioritize your respiratory health, and embark on a transformative journey towards a pneumonia-free future. Let's breathe freely and live life abundantly with <strong>PNEUMO</strong>!</p>
+        <div class="row content-row">
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="title mb-3">
+                        <span class="num mbr-fonts-style display-1"><strong>10,000+</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Brains Enlightened</strong>
+                    </h4>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="title mb-3">
+                        <span class="num mbr-fonts-style display-1"><strong>98%</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Satisfaction Rate</strong>
+                    </h4>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="title mb-3">
+                        <span class="num mbr-fonts-style display-1"><strong>500+</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Success Stories Shared</strong>
+                    </h4>
                 </div>
             </div>
         </div>
-    </section>
-    <section class="text-center upload-section content-section" id="upload">
-        <div class="container">
-            <div class="col-lg-8 mx-auto">
-                <h1>GO BOLDLY</h1>
-                <p>Detecting pneumonia early is your ticket to resilience. Recognize the signs, seize control, and embark on your journey to recovery. Your body communicates—listen, act, and let early detection be the spark for your wellness journey. Face the challenge, armed with knowledge and determination. Cherish your health, protect it, and thrive.</p>
-                <form id="uploadForm" method="POST" enctype="multipart/form-data">
-                    <input class="btn btn-primary btn-lg btn-default" id="file" type="file" name="file" accept=".jpg, .jpeg, .png" required>
-                    <button class="btn btn-primary btn-lg btn-default" id="predictButton" type="button">PREDICT</button>
-                </form>
-                
-                <div id="predictionResult">
-                    <h2 id="predictionText" style="color: rgb(66, 220, 163);"></h2>
-                    <span id="predictionProbability"></span>
-                    <!-- Display the uploaded image -->
-                    <img id="uploadedImage" alt="Uploaded Image" style="display: none; max-width: 100%;" />
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="text-center content-section" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>Contact us</h2>
-                    <p>We value your health and well-being! If you have any questions, concerns, or simply want to share your thoughts on respiratory health, feel free to reach out to us. Your feedback is vital in helping us provide the most accurate and helpful information. Our dedicated team is here to assist you on your journey to better health. Together, let's foster a community that prioritizes respiratory wellness. Contact us today, because your health matters, and we're here to support you every step of the way.</p>
-                    <ul class="list-inline banner-social-buttons">
-                        <li class="list-inline-item">&nbsp;
-                            <button class="btn btn-primary btn-lg github-button" type="button" onclick="redirectToGitHub()">
-                                <i class="fa fa-github fa-fw"></i>
-                                <span class="network-name">&nbsp;github</span>
-                            </button>
+    </div>
+</section>
+    <style>
+.cid-u52CbXEu4C {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: transparent;
+}
+.cid-u52CbXEu4C .item-wrapper img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50% !important;
+}
+.cid-u52CbXEu4C .item-wrapper {
+  background: #ffffff;
+  margin-bottom: 2rem;
+  padding: 2.25rem;
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .cid-u52CbXEu4C .item-wrapper {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .cid-u52CbXEu4C .item-wrapper {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+.cid-u52CbXEu4C .card-title,
+.cid-u52CbXEu4C .iconfont-wrapper {
+  color: #000000;
+}
+.cid-u52CbXEu4C .card-text {
+  color: #000000;
+  text-align: left;
+}
+.cid-u52CbXEu4C .content-head {
+  max-width: 800px;
+}
+.cid-u52CbXEu4C .mbr-section-title {
+  color: #000000;
+}
+.cid-u52CbXEu4C .card-title,
+.cid-u52CbXEu4C .img-wrapper {
+  text-align: center;
+}
+.cid-u52CbXEu4C .img-wrapper {
+  display: flex;
+  justify-content: center;
+}
+</style>
 
-                            <script>
-                                function redirectToGitHub() {
-                                    window.location.href = 'https://github.com/Abhiram-P-Ashok';
-                                }
-                            </script>
-                        </li>
-                    </ul>
+    <style>
+.cid-u52CbXEfpq {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: transparent;
+}
+.cid-u52CbXEfpq .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-u52CbXEfpq .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-u52CbXEfpq .mbr-text {
+  color: #000000;
+}
+.cid-u52CbXEfpq .mbr-section-subtitle {
+  color: #ffffff;
+  text-align: left;
+}
+.cid-u52CbXEfpq .item-wrapper {
+  background: #ffffff;
+  padding: 2.25rem 2.25rem 1rem 2.25rem;
+}
+@media (max-width: 767px) {
+  .cid-u52CbXEfpq .item-wrapper {
+    padding: 2rem 1.5rem 0.5rem 1.5rem;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .cid-u52CbXEfpq .item-wrapper {
+    padding: 2rem 1.5rem 0.5rem 1.5rem;
+  }
+}
+.cid-u52CbXEfpq .main-button {
+  margin-bottom: 2rem;
+}
+@media (max-width: 767px) {
+  .cid-u52CbXEfpq .main-button {
+    margin-bottom: 2rem;
+  }
+}
+.cid-u52CbXEfpq .counter-container ul {
+  margin: 0;
+  padding-left: 2.25rem;
+  list-style: none;
+}
+.cid-u52CbXEfpq .counter-container ul li {
+  position: relative;
+  list-style: none;
+  margin-bottom: 2rem;
+}
+.cid-u52CbXEfpq .counter-container ul li:before {
+  position: absolute;
+  left: -1.5em;
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary-color, #9fe870);
+  background-color: var(--secondary-color, #9fe870);
+  width: 0.5em;
+  height: 0.5em;
+  top: 0.4em;
+  border-radius: 50%;
+}
+.cid-u52CbXEfpq .mbr-text UL {
+  text-align: left;
+}
+.cid-u52CbXEfpq .mbr-section-subtitle,
+.cid-u52CbXEfpq .main-button {
+  color: #000000;
+}
+</style>
+<section class="article021 cid-u52CbXEfpq" id="features-51-u52CbXEfpq">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="col-12 col-md-12">
+                    <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-2">
+                        <strong>Detecting Brain Tumours Early</strong>
+                    </h5>
+                    <h6 class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">
+                      Unveiling the Hidden Threats Before It&#x27;s Too Late</h6>                    
+                </div>
+            </div>
+
+            <div class="col-lg-8 side-features">
+                <div class="item-wrapper align-left">
+                    <div class="counter-container mbr-text mbr-fonts-style display-7">
+                        <ul>
+                          <li>Discover how our cutting-edge technology can spot brain tumours at their earliest stages, giving you a fighting chance against the unseen enemy.</li>
+                          <li>Early detection is key! Learn how our advanced methods can identify brain tumours before they wreak havoc on your health.</li>
+                          <li>Don&#x27;t wait for symptoms to show up. Find out how our innovative approach can detect brain tumours when they are most treatable.</li>
+                          <li>Stay ahead of the game with our revolutionary techniques that catch brain tumours before they become a serious threat to your well-being.</li>
+                          <li>Join us in the battle against brain tumours by embracing early detection methods that can save lives and futures.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <p>Copyright ©&nbsp;Brand 2023</p>
-    </section>
-    <div class="map-clean"></div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="assets/js/grayscale.js"></script>
-    <script src="assets/script.js"></script>
+    </div>
+</section>
+    <style>
+.cid-u52CbXF2eG {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #ffffff;
+}
+.cid-u52CbXF2eG .item:focus,
+.cid-u52CbXF2eG span:focus {
+  outline: none;
+}
+.cid-u52CbXF2eG .item {
+  cursor: pointer;
+}
+.cid-u52CbXF2eG .grid-container {
+  grid-row-gap: 2rem;
+}
+@media (max-width: 767px) {
+  .cid-u52CbXF2eG .grid-container {
+    grid-row-gap: 1rem;
+  }
+}
+.cid-u52CbXF2eG .grid-container-1,
+.cid-u52CbXF2eG .grid-container-2,
+.cid-u52CbXF2eG .grid-container-3 {
+  gap: 0 2rem;
+}
+@media (max-width: 767px) {
+  .cid-u52CbXF2eG .grid-container-1,
+  .cid-u52CbXF2eG .grid-container-2,
+  .cid-u52CbXF2eG .grid-container-3 {
+    gap: 0 1rem;
+  }
+}
+.cid-u52CbXF2eG .mbr-section-title {
+  color: #000000;
+}
+.cid-u52CbXF2eG .mbr-text,
+.cid-u52CbXF2eG .mbr-section-btn {
+  color: #000000;
+}
+.cid-u52CbXF2eG .content-head {
+  max-width: 800px;
+}
+.cid-u52CbXF2eG .container,
+.cid-u52CbXF2eG .container-fluid {
+  overflow: hidden;
+}
+.cid-u52CbXF2eG .grid-container {
+  display: grid;
+  transform: translate3d(-3rem, 0, 0);
+  width: 115vw;
+  grid-column-gap: 1rem;
+}
+.cid-u52CbXF2eG .grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cid-u52CbXF2eG .grid-item img {
+  min-width: 30vw;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 767px) {
+  .cid-u52CbXF2eG .grid-item img {
+    min-width: 35vw;
+  }
+}
+.cid-u52CbXF2eG .grid-container-1,
+.cid-u52CbXF2eG .grid-container-2,
+.cid-u52CbXF2eG .grid-container-3 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+}
+.cid-u52CbXF2eG .grid-container-1 {
+  align-items: flex-end;
+}
+.cid-u52CbXF2eG .grid-container-2 {
+  align-items: flex-start;
+}
+</style>
+<section class="gallery07 cid-u52CbXF2eG" id="gallery-14-u52CbXF2eG">
+  <div class="container-fluid gallery-wrapper">
+    <div class="grid-container">
+      <div class="grid-container-3" style="transform: translate3d(-200px, 0px, 0px);">
+        <div class="grid-item">
+          <img src="assets/images/photo-1566669437687-7040a6926753.jpeg">
+        </div>
+        <div class="grid-item">
+          <img src="assets/images/photo-1558021212-51b6ecfa0db9.jpeg">
+        </div>
+        <div class="grid-item">
+          <img src="assets/images/photo-1644648479153-2a3dbee76212.jpeg">
+        </div>
+        <div class="grid-item">
+          <img src="assets/images/photo-1631563019676-dade0dbdb8fc.jpeg">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <style>
+.cid-u52CbXFngX {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: transparent;
+}
+.cid-u52CbXFngX .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-u52CbXFngX .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-u52CbXFngX .mbr-text {
+  color: #000000;
+}
+.cid-u52CbXFngX .mbr-section-subtitle {
+  color: #ffffff;
+  text-align: left;
+}
+.cid-u52CbXFngX .main-button {
+  margin-bottom: 2rem;
+}
+@media (max-width: 767px) {
+  .cid-u52CbXFngX .main-button {
+    margin-bottom: 2rem;
+  }
+}
+.cid-u52CbXFngX .mbr-section-subtitle,
+.cid-u52CbXFngX .main-button {
+  color: #000000;
+}
+</style>
+<section class="image08 cid-u52CbXFngX" id="image-12-u52CbXFngX">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4">
+        <div class="col-12 col-md-12">
+          <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-2">
+            <strong>Advanced Brain Tumour</strong>
+          </h5>
+          <h6 class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">
+            Peek into the Future of Brain Tumour Prediction with State-of-the-Art Technology
+          </h6>
+        </div>
+      </div>
+      <div class="col-lg-8 side-features">
+        <div class="image-wrapper mb-4">
+          <img class="w-100" src="assets/images/photo-1453847668862-487637052f8a.jpeg">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <style>
+  .cid-u52CbXFGM7 {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    background-color: #ffffff;
+  }
+  .cid-u52CbXFGM7 .item-subtitle {
+    line-height: 1.2;
+    color: #000000;
+    text-align: center;
+  }
+  .cid-u52CbXFGM7 img,
+  .cid-u52CbXFGM7 .item-img {
+    width: 100%;
+    height: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  .cid-u52CbXFGM7 .item:focus,
+  .cid-u52CbXFGM7 span:focus {
+    outline: none;
+  }
+  .cid-u52CbXFGM7 .item {
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 767px) {
+    .cid-u52CbXFGM7 .item {
+      margin-bottom: 1rem;
+    }
+  }
+  .cid-u52CbXFGM7 .item-wrapper {
+    position: relative;
+    border-radius: 4px;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .cid-u52CbXFGM7 .mbr-section-btn {
+    margin-top: auto !important;
+  }
+  .cid-u52CbXFGM7 .mbr-section-title {
+    color: #000000;
+  }
+  .cid-u52CbXFGM7 .mbr-text,
+  .cid-u52CbXFGM7 .mbr-section-btn {
+    color: #000000;
+    text-align: center;
+  }
+  .cid-u52CbXFGM7 .item-title {
+    color: #000000;
+  }
+  .cid-u52CbXFGM7 .content-head {
+    max-width: 800px;
+  }
+</style>
+
+    <style>
+  .cid-u52CbXFvJ8 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-color: #ffffff;
+  }
+  .cid-u52CbXFvJ8 .item-subtitle {
+    line-height: 1.2;
+    color: #000000;
+  }
+  .cid-u52CbXFvJ8 img,
+  .cid-u52CbXFvJ8 .item-img {
+    width: 100%;
+    height: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  .cid-u52CbXFvJ8 .item:focus,
+  .cid-u52CbXFvJ8 span:focus {
+    outline: none;
+  }
+  .cid-u52CbXFvJ8 .item {
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 767px) {
+    .cid-u52CbXFvJ8 .item {
+      margin-bottom: 1rem;
+    }
+  }
+  .cid-u52CbXFvJ8 .item-wrapper {
+    position: relative;
+    border-radius: 4px;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .cid-u52CbXFvJ8 .mbr-section-title {
+    color: #232323;
+  }
+  .cid-u52CbXFvJ8 .mbr-text,
+  .cid-u52CbXFvJ8 .mbr-section-btn {
+    color: #232323;
+  }
+  .cid-u52CbXFvJ8 .item-title {
+    color: #232323;
+  }
+  .cid-u52CbXFvJ8 .content-head {
+    max-width: 800px;
+  }
+</style>
+<section class="features03 cid-u52CbXFvJ8" id="news-1-u52CbXFvJ8">
+	<div class="container-fluid">
+		<div class="row justify-content-center mb-5">
+			<div class="col-12 content-head">
+				<div class="mbr-section-head">
+					<h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+						<strong>Latest Breakthroughs Unveiled</strong>
+					</h4>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="item features-image col-12 col-md-6 col-lg-3 active">
+				<div class="item-wrapper">
+					<div class="item-img mb-3">
+						<img src="assets/images/photo-1507413245164-6160d8298b31.jpeg">
+					</div>
+					<div class="item-content align-left">
+						<h6 class="item-subtitle mbr-fonts-style mb-3 display-5">
+							<strong><a class="text-black fw-bold" href="#">Revolutionary AI Predicts Brain Tumours Instantly</a></strong>
+						</h6>
+						<p class="mbr-text mbr-fonts-style mb-3 display-7">Today</p>
+						<p class="mbr-text mbr-fonts-style mb-3 display-7">Witness the future as AI technology predicts brain tumours in seconds, changing the game for early detection.</p>
+						<div class="mbr-section-btn item-footer"><a href="#" class="btn item-btn btn-primary display-7">Explore</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="item features-image col-12 col-md-6 col-lg-3">
+				<div class="item-wrapper">
+					<div class="item-img mb-3">
+						<img src="assets/images/photo-1530973428-5bf2db2e4d71.jpeg" data-slide-to="1" data-bs-slide-to="1">
+					</div>
+					<div class="item-content align-left">
+						<h6 class="item-subtitle mbr-fonts-style mb-3 display-5">
+							<strong><a class="text-black fw-bold" href="#">Nanotechnology: Tiny Warriors Against Brain Tumours</a></strong>
+						</h6>
+						<p class="mbr-text mbr-fonts-style mb-3 display-7">Yesterday</p>
+						<p class="mbr-text mbr-fonts-style mb-3 display-7">Discover how nanobots are revolutionizing brain tumour treatment, offering hope for patients worldwide.</p>
+						<div class="mbr-section-btn item-footer"><a href="#" class="btn item-btn btn-primary display-7">Explore</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="item features-image col-12 col-md-6 col-lg-3">
+				<div class="item-wrapper">
+					<div class="item-img mb-3">
+						<img src="assets/images/photo-1511367461989-f85a21fda167.jpeg" data-slide-to="2" data-bs-slide-to="2">
+					</div>
+					<div class="item-content align-left">
+						<h6 class="item-subtitle mbr-fonts-style mt-0 mb-3 display-5">
+							<strong><a class="text-black fw-bold" href="#">Gene Editing Breakthrough in Brain Tumour Research</a></strong>
+						</h6>
+						<p class="mbr-text mbr-fonts-style mb-3 display-7">2 days ago</p>
+						<p class="mbr-text mbr-fonts-style mb-3 display-7">Explore the cutting-edge gene editing techniques that are reshaping the landscape of brain tumour studies.</p>
+						<div class="mbr-section-btn item-footer"><a href="#" class="btn item-btn btn-primary display-7">Explore</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="item features-image col-12 col-md-6 col-lg-3">
+				<div class="item-wrapper">
+					<div class="item-img mb-3">
+						<img src="assets/images/photo-1617791160536-598cf32026fb.jpeg" data-slide-to="3" data-bs-slide-to="3">
+					</div>
+					<div class="item-content align-left">
+						<h6 class="item-subtitle mbr-fonts-style mt-0 mb-3 display-5">
+							<strong><a class="text-black fw-bold" href="#">Virtual Reality: A New Tool in Brain Tumour Diagnosis</a></strong>
+						</h6>
+						<p class="mbr-text mbr-fonts-style mb-3 display-7">3 days ago</p>
+						<p class="mbr-text mbr-fonts-style mb-3 display-7">Step into the virtual world where VR is aiding in the accurate diagnosis of brain tumours, pushing boundaries in healthcare.</p>
+						<div class="mbr-section-btn item-footer"><a href="#" class="btn item-btn btn-primary display-7">Explore</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+    <style>
+  .cid-u52CbXG5rO {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: var(--dominant-color, #260a30);
+  }
+
+  .cid-u52CbXG5rO input {
+    padding: 1.2rem 1.5rem;
+    border: none !important;
+    height: 100%;
+  }
+
+  .cid-u52CbXG5rO input:hover {
+    border: none !important;
+  }
+
+  .cid-u52CbXG5rO .btn {
+    height: 100%;
+    margin: auto;
+  }
+
+  @media (min-width: 992px) {
+    .cid-u52CbXG5rO .text-wrapper {
+      padding: 0 2rem;
+    }
+  }
+
+  .cid-u52CbXG5rO .row {
+    justify-content: center;
+  }
+
+  .cid-u52CbXG5rO .mbr-section-btn {
+    display: flex;
+    margin-bottom: 1.2rem;
+    width: fit-content;
+  }
+
+  @media (min-width: 768px) {
+    .cid-u52CbXG5rO .mbr-section-btn {
+      margin-left: initial;
+    }
+  }
+
+  .cid-u52CbXG5rO .mbr-section-btn .btn {
+    width: auto;
+  }
+
+  @media (max-width: 991px) {
+    .cid-u52CbXG5rO .image-wrapper {
+      margin-bottom: 2rem;
+    }
+
+    .cid-u52CbXG5rO .content-wrapper {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .cid-u52CbXG5rO .justify-content-center {
+    align-items: center;
+  }
+
+  .cid-u52CbXG5rO .mbr-section-title {
+    text-align: center;
+    color: var(--dominant-text, #ffd7ef);
+  }
+</style>
+<section class="header2 cid-u52CbXG5rO" id="subscription-form-1-u52CbXG5rO">
+  <div class="container">
+    <div class="row content-wrapper justify-content-center">
+      <div class="col-lg-8 mbr-form">
+        <div class="">
+          <h1 class="mbr-section-title mbr-fonts-style mb-5 display-1">
+            <strong>Unleash the Power of Prediction</strong>
+          </h1>
+        </div>
+        <div class="text-wrapper align-left" data-form-type="formoid">
+          <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="">
+            <div class="row">
+              <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
+              <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                Oops...! some problem!
+              </div>
+            </div>
+            <div class="dragArea row">
+              <div data-for="email" class="col-lg-6 col-md-6 col-sm-12 form-group">
+                <input type="email" name="email" placeholder="test@email.com" data-form-field="email" class="form-control display-7" value="" id="email-header02-0">
+              </div>
+              <div class="col-auto mbr-section-btn"><button type="submit" class="w-100 btn btn-primary display-7">Get Predictions Now</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <style>
+.cid-u52CbXGoHG {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #ffffff;
+}
+.cid-u52CbXGoHG .social-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cid-u52CbXGoHG .social-row .soc-item {
+  margin: 8px;
+}
+.cid-u52CbXGoHG .social-row .soc-item a:hover .mbr-iconfont,
+.cid-u52CbXGoHG .social-row .soc-item a:focus .mbr-iconfont {
+  background-color: #f7f7f7;
+}
+.cid-u52CbXGoHG .social-row .soc-item a .mbr-iconfont {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  font-size: 32px;
+  background-color: #f7f7f7;
+  color: var(--primary-color, #393193);
+  transition: all 0.3s ease-in-out;
+}
+.cid-u52CbXGoHG .row-links {
+  width: 100%;
+  justify-content: center;
+}
+.cid-u52CbXGoHG .mbr-section-title {
+  color: #ffffff;
+}
+.cid-u52CbXGoHG .mbr-section-title,
+.cid-u52CbXGoHG .social-list {
+  color: #000000;
+}
+
+</style>
+<section class="social05 cid-u52CbXGoHG" id="follow-us-2-u52CbXGoHG">
+    <div class="container">
+        <div class="row">
+            <h3 class="mbr-section-title align-center mb-5 mbr-fonts-style display-2">
+                <strong>Join Our Prediction Community</strong>
+            </h3>
+            <div class="col-12">
+                <div class="social-row">
+                    <div class="soc-item">
+                        <a href="#" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-facebook"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="#" target="_blank">
+                            <span class="mbr-iconfont socicon-twitter socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="#" target="_blank">
+                            <span class="mbr-iconfont socicon-instagram socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="#" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-linkedin"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="#" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-twitch"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <style>
+.cid-u52CbXG1Kd {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: transparent;
+}
+.cid-u52CbXG1Kd .mbr-overlay {
+  background-color: #ffffff;
+  opacity: 0.4;
+}
+.cid-u52CbXG1Kd form .mbr-section-btn {
+  text-align: center;
+  width: 100%;
+}
+.cid-u52CbXG1Kd form .mbr-section-btn .btn {
+  display: inline-flex;
+}
+@media (max-width: 991px) {
+  .cid-u52CbXG1Kd form .mbr-section-btn .btn {
+    width: 100%;
+  }
+}
+.cid-u52CbXG1Kd .content-head {
+  max-width: 800px;
+}
+
+</style>
+<section class="form5 cid-u52CbXG1Kd" id="contact-form-3-u52CbXG1Kd">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>Reach Out for Mind-Blowing Insights</strong>
+                    </h3>                    
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+                <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="">
+                    <div class="row">
+                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                            Oops...! some problem!
+                        </div>
+                    </div>
+                    <div class="dragArea row">
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="name">
+                            <input type="text" name="name" placeholder="Name" data-form-field="name" class="form-control" value="" id="name-form02-0">
+                        </div>
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <input type="email" name="email" placeholder="Email" data-form-field="email" class="form-control" value="" id="email-form02-0">
+                        </div>
+                        <div class="col-12 form-group mb-3" data-for="url">
+                            <input type="url" name="url" placeholder="Phone" data-form-field="url" class="form-control" value="" id="url-form5-0">
+                        </div>
+                        <div class="col-12 form-group mb-3" data-for="textarea">
+                            <textarea name="textarea" placeholder="Message" data-form-field="textarea" class="form-control" id="textarea-form02-0"></textarea>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-primary display-7">Send Message</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+    <style>
+.cid-u52CbXGtEz {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: transparent;
+}
+.cid-u52CbXGtEz .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-u52CbXGtEz .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-u52CbXGtEz .mbr-text {
+  color: #000000;
+}
+.cid-u52CbXGtEz .mbr-section-subtitle {
+  /* color: ##000000;
+  text-align: left; */
+}
+.cid-u52CbXGtEz .main-button {
+  margin-bottom: 2rem;
+}
+@media (max-width: 767px) {
+  .cid-u52CbXGtEz .main-button {
+    margin-bottom: 2rem;
+  }
+}
+.cid-u52CbXGtEz .mbr-section-subtitle,
+.cid-u52CbXGtEz .main-button {
+  color: #000000;
+}
+.cid-u52CbXGtEz .google-map {
+  height: 30rem;
+  position: relative;
+  border-radius: 2rem;
+}
+.cid-u52CbXGtEz .google-map iframe {
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+}
+.cid-u52CbXGtEz .google-map [data-state-details] {
+  color: #6b6763;
+  height: 1.5em;
+  margin-top: -0.75em;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+.cid-u52CbXGtEz .google-map[data-state] {
+  background: #e9e5dc;
+}
+.cid-u52CbXGtEz .google-map[data-state="loading"] [data-state-details] {
+  display: none;
+}
+</style>
+
+<section class="contacts03 cid-u52CbXGtEz" id="contacts-11-u52CbXGtEz">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4">
+        <div class="col-12 col-md-12">
+          <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-2">
+            <strong>Collaborators Unite</strong>
+          </h5>
+          <p class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">
+            Phone: <a href="">1-800-BRAIN-TUM</a>
+            <br>Email: info@tumourprediction.com
+            <br>Address:  India
+            <br>Working Hours: Mon-Fri: 9am-5pm</p> 
+        </div>
+      </div>
+      <div class="col-lg-8 side-features">
+        <div class="google-map">
+          <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key&#x3D;AIzaSyCt1265A4qvZy9HKUeA8J15AOC4SrCyZe4&amp;q&#x3D;%20India" allowfullscreen=""></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <style>
+.cid-u52CbXG8fo {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #000000;
+}
+.cid-u52CbXG8fo .social-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cid-u52CbXG8fo .social-row .soc-item {
+  margin: 8px;
+}
+.cid-u52CbXG8fo .social-row .soc-item a:hover .mbr-iconfont,
+.cid-u52CbXG8fo .social-row .soc-item a:focus .mbr-iconfont {
+  background-color: #ffffff;
+}
+.cid-u52CbXG8fo .social-row .soc-item a .mbr-iconfont {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  font-size: 32px;
+  background-color: #edefeb;
+  color: #000000;
+  transition: all 0.3s ease-in-out;
+}
+.cid-u52CbXG8fo .row-links {
+  width: 100%;
+  justify-content: center;
+}
+.cid-u52CbXG8fo .header-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-bottom: 0;
+}
+.cid-u52CbXG8fo .header-menu li {
+  padding: 0 1rem 1rem 1rem;
+}
+.cid-u52CbXG8fo .header-menu li p {
+  margin: 0;
+}
+.cid-u52CbXG8fo .copyright {
+  margin-bottom: 0;
+  color: #ffffff;
+  text-align: center;
+}
+.cid-u52CbXG8fo .mbr-section-title {
+  color: #ffffff;
+}
+
+</style>
+<section class="footer3 cid-u52CbXG8fo" once="footers" id="footer-3-u52CbXG8fo">
+    <div class="container">
+        <div class="row">
+            <div class="row-links">
+                <ul class="header-menu">
+                <li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">Home</a>
+                  </li><li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">About</a>
+                  </li><li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">Predictions</a>
+                  </li><li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">Contact</a>
+                  </li></ul>
+              </div>
+
+            <div class="col-12 mt-4">
+                <div class="social-row">
+                    <div class="soc-item">
+                        <a href="#" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-facebook display-7"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="#" target="_blank">
+                            <span class="mbr-iconfont socicon-twitter socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="#" target="_blank">
+                            <span class="mbr-iconfont socicon-instagram socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="#" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-linkedin"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="#" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-twitch"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mt-5">
+                <p class="mbr-fonts-style copyright display-7">
+                    © Cerebro. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="assets/parallax/jarallax.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/embla/embla.min.js"></script>
+  <script src="assets/embla/script.js"></script>
+  <script src="assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>
+  <script src="assets/masonry/masonry.pkgd.min.js"></script>
+  <script src="assets/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/scrollgallery/scroll-gallery.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/ytplayer/index.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="assets/formoid/formoid.min.js"></script>
+  <script src="assets\script.js"></script>
+  
+  <script>
+
+    (function(){
+      var animationInput = document.createElement('input');
+      animationInput.setAttribute('name', 'animation');
+      animationInput.setAttribute('type', 'hidden');
+      document.body.append(animationInput);
+    })();
+
+  </script>
+
 </body>
 </html>
