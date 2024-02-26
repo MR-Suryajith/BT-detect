@@ -941,43 +941,84 @@
   }
 </style><br>
 <section class="text-center upload-section content-section" id="upload"> 
-  <div class="container">
+    <div class="container">
       <div class="col-lg-8 mx-auto">
-          <h4>Confront brain tumors fearlessly-</h4>
-          <p>
-             Early detection of brain tumors is crucial for timely intervention and
-             improved patient outcomes.Cerebro’s accurate detection and segmentation
-             capabilities can assist medical professionals in diagnosing
-             brain tumors more effectively.
-          </p>
-          <form id="uploadForm" method="POST" enctype="multipart/form-data">
-              <input class="btn btn-primary btn-lg btn-default"
-               id="file"
-               type="file"
-               name="file" 
-               accept=".jpg, .jpeg, .png" 
-               required
-              />
-              <button
-               class="btn btn-primary btn-lg btn-default"
-               id="predictButton" 
-               type="button">PREDICT
-              </button>
-          </form>
-          
-          <div id="predictionResult">
-              <h2 id="predictionText" style="color: rgb(66, 210, 220);"></h2>
-              <span id="predictionProbability"></span>
-              <!-- Display the uploaded image -->
-              <img
-               id="uploadedImage"
-               alt="Uploaded Image"
-               style="display: none; max-width: 100%;"
-              />
-          </div>
+        <h4>Confront brain tumors fearlessly-</h4>
+        <p>
+           Early detection of brain tumors is crucial for timely intervention and
+           improved patient outcomes.Cerebro’s accurate detection and segmentation
+           capabilities can assist medical professionals in diagnosing
+           brain tumors more effectively.
+        </p>
+        <div id="loadingIndicator" class="loading-indicator"></div> <!-- Loading indicator -->
+        <form id="uploadForm" method="POST" enctype="multipart/form-data">
+          <input class="btn btn-primary btn-lg btn-default"
+           id="file"
+           type="file"
+           name="file" 
+           accept=".jpg, .jpeg, .png" 
+           required
+          />
+          <button
+           class="btn btn-primary btn-lg btn-default"
+           id="predictButton" 
+           type="button"
+           onclick="handlePrediction()">PREDICT
+          </button>
+        </form>
+        
+        <div id="predictionResult">
+          <h2 id="predictionText" style="color: rgb(66, 210, 220);"></h2>
+          <span id="predictionProbability"></span>
+          <!-- Display the uploaded image -->
+          <img
+           id="uploadedImage"
+           alt="Uploaded Image"
+           style="display: none; max-width: 100%;"
+          />
+        </div>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
+<style>
+  .loading-indicator {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
+<script>function handlePrediction() {
+  // Show loading indicator
+  document.getElementById('loadingIndicator').style.display = 'block';
+  
+  // Here you can put the code to handle the prediction process
+  // For example, you can make an AJAX request to a server for prediction
+  
+  // Simulating a delay with setTimeout (replace this with your actual prediction code)
+  setTimeout(function() {
+    // Hide loading indicator when the prediction is done
+    document.getElementById('loadingIndicator').style.display = 'none';
+    
+    // Here you can put the code to display the prediction result
+    // For example, update the content of #predictionText and #predictionProbability
+  }, 2000); // Replace 2000 with your actual prediction processing time in milliseconds
+}
+
+</script>
 <style>
   .upload-section {
   background-color: #f8f9fa; /* Background color */
