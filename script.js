@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             if (model) {
               const predictionResult = await predictImage(loadedImage, model);
-              const classLabel = xray_not[predictionResult.classIndex];
+              const classLabel = CT_not[predictionResult.classIndex];
               if (classLabel == "Not CT") {
                 document.getElementById(
                   "predictionText"
