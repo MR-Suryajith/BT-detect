@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const predictButton = document.getElementById("predictButton");
   predictButton.addEventListener("click", uploadAndPredict);
   var class_names = ["Glioma", "Meningioma", "No Tumor", "Pituitary"];
-  var CT_not = ["CT", "Not CT"];
+  var CT_not = ["MRI", "Not MRI"];
 
   async function preprocessImage(image) {
     const tensor = tf.browser.fromPixels(image);
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             if (model) {
               const predictionResult = await predictImage(loadedImage, model);
               const classLabel = CT_not[predictionResult.classIndex];
-              if (classLabel == "Not CT") {
+              if (classLabel == "Not MRI") {
                 document.getElementById(
                   "predictionText"
                 ).textContent = `Prediction: ${classLabel}`;
