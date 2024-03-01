@@ -960,10 +960,11 @@
            accept=".jpg, .jpeg, .png" 
            required
           />
-<button class="btn btn-primary btn-lg btn-default"
- id="predictButton"
- type="button"
- onclick="handlePrediction()">PREDICT</button>
+<button 
+          class="btn btn-primary btn-lg btn-default"
+          id="predictButton"
+          type="button"
+          onclick="handlePrediction()">PREDICT</button>
         </form>
         
         <div id="predictionResult">
@@ -980,6 +981,12 @@
     </div>
   </section>
 <style>
+    .btn {
+    transition: all 0.3s ease;
+  }
+  .btn:hover {
+    transform: scale(1.1);
+  }
   .loading-indicator {
   display: none;
   position: absolute;
@@ -1004,7 +1011,10 @@
 function handlePrediction() {
   // Show loading indicator
   document.getElementById('loadingIndicator').style.display = 'block';
-
+ function handlePrediction() {
+    // Your prediction handling code here
+    alert("Prediction clicked!");
+  
   // Get the uploaded image
   var uploadedImage = document.getElementById('uploadedImage');
   // Check if an image is selected
@@ -1027,7 +1037,7 @@ function handlePrediction() {
     // Read the selected image as a data URL
     reader.readAsDataURL(uploadedImage.files[0]);
   }
-}
+}}
 
 </script>
 <style>
